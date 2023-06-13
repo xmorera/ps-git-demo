@@ -4,6 +4,12 @@ import os
 print("- os.listdir")
 
 pprint(os.listdir("E:\\github\\xmorera\\ps-working-files-python\\demos"))
+if(os.name == 'nt'):
+  # Windows 
+  pprint(os.listdir("E:\\github\\xmorera\\ps-working-files-python\\demos"))
+else:    
+  # MacOS
+  pprint(os.listdir("/Users/xavier/github/xmorera/ps-working-files-python/demos"))
 
 # Print the file path and directory separator for the current OS
 print(f"File path: {os.path.abspath('samples/demo_steps.txt')}")
