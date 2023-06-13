@@ -3,7 +3,6 @@ import os
 
 print("- os.listdir")
 
-pprint(os.listdir("E:\\github\\xmorera\\ps-working-files-python\\demos"))
 if(os.name == 'nt'):
   # Windows 
   pprint(os.listdir("E:\\github\\xmorera\\ps-working-files-python\\demos"))
@@ -16,8 +15,13 @@ print(f"File path: {os.path.abspath('samples/demo_steps.txt')}")
 print(f"Directory separator: {os.path.sep}")
 
 # Print the file path and directory separator for Windows
-print(f"File path (Windows): {os.path.abspath('samples/demo_steps.txt').replace(os.path.sep, '/')}")
-print(f"Directory separator (Windows): {os.path.altsep}")
+if os.name == "nt":
+    print(f"File path (Windows): {os.path.abspath('samples/demo_steps.txt').replace(os.path.sep, '/')}")
+    print(f"Directory separator (Windows): {os.path.altsep}")
+# Print the file path and directory separator for Mac and Linux
+else:
+    print(f"File path (Mac/Linux): {os.path.abspath('samples/demo_steps.txt')}")
+    print(f"Directory separator (Mac/Linux): {os.path.sep}")
 
 fileName = "file.txt"
 file_path = os.path.join(os.getcwd(), fileName)
