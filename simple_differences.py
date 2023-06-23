@@ -1,7 +1,7 @@
 from pprint import pprint
 import os
 
-print("- os.listdir")
+print("Sample to demonstrate the differences between OSes")
 if(os.name == 'nt'):
   # Windows 
   pprint(os.listdir("E:\\github\\xmorera\\ps-working-files-python\\demos"))
